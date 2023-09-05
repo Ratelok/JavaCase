@@ -1,0 +1,8 @@
+SELECT surname
+FROM testTable
+WHERE experience = (
+  SELECT DISTINCT experience
+  FROM testTable
+  ORDER BY experience DESC
+  LIMIT 1 OFFSET 1
+);
